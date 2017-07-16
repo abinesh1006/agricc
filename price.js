@@ -4,7 +4,7 @@ var wd;
 
 function displayTemp(fTemp, c){
  
-  return Math.round(fTemp) + " F";
+  return  " F";
 }
 
 function render(wd, cel){

@@ -3,13 +3,13 @@ var cel = false;
 var wd;
 
 function displayTemp(fTemp, c){
-  if(c) return Math.round((fTemp - 32)*(5/9)) + " C";
+ 
   return Math.round(fTemp) + " F";
 }
 
 function render(wd, cel){
       var commodity = wd.name;
-      var modal_price=displayTemp(wd.main.price,cel);
+      var modal_num=displayTemp(wd.main.price,cel);
       var high = displayTemp(wd.main.temp_max, cel);
       var low = displayTemp(wd.main.temp_min, cel);
 
@@ -21,7 +21,7 @@ $(function(){
 
   var commodity;
 
-    $.getJSON('http://api.data.gov.in/resource/2.5/weather?units=imperial&lat='
+    $.getJSON('http://api.data.gov.in/resource/2.5/commodityprice?units=imperial&lat='
               + loc[0] + '&lon=' + loc[1] + '&APPID=' + API_KEY, function(apiData){
       wd = apiData;
 
